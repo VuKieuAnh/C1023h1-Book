@@ -20,6 +20,12 @@ public class ProgrammingBook extends Book {
         this.language = language;
     }
 
+    public ProgrammingBook(String code, String name, int price, String author, String language, String framework) {
+        super(code, name, price, author);
+        this.language = language;
+        this.framework = framework;
+    }
+
     public String getLanguage() {
         return language;
     }

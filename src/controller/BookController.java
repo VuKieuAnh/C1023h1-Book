@@ -6,13 +6,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BookController {
-    List<Book> bookList = new ArrayList<>();
+    public  static List<Book> bookList = new ArrayList<>();
 
-    public void addNewBook(Book book){
+    public static void addNewBook(Book book){
         bookList.add(book);
     }
 
-    public void deleteById(int index){
+    public static void deleteById(int index){
         bookList.remove(index);
     }
 
