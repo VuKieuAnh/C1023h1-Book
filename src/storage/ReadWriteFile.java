@@ -6,7 +6,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ReadWriteFile {
+public class ReadWriteFile implements IReadWriteFile {
 //    doc file
     public List<Book> readFile(){
         File file = new File("book.dat");

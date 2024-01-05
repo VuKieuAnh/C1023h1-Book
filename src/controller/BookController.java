@@ -1,13 +1,17 @@
 package controller;
 
 import model.Book;
+import storage.IReadWriteFile;
 import storage.ReadWriteFile;
+import storage.ReadWriteFileExcel;
+import storage.ReadWriteFileText;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class BookController {
-    private static ReadWriteFile readWriteFile = ReadWriteFile.getInstance();
+//    private static IReadWriteFile readWriteFile = ReadWriteFile.getInstance();
+    private static IReadWriteFile readWriteFile = new ReadWriteFileText();
     public  static List<Book> bookList = readWriteFile.readFile();
 
     public static void addNewBook(Book book){
