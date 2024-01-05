@@ -7,16 +7,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BookController {
-    public  static List<Book> bookList = new ReadWriteFile().readFile();
+    private static ReadWriteFile readWriteFile = ReadWriteFile.getInstance();
+    public  static List<Book> bookList = readWriteFile.readFile();
 
     public static void addNewBook(Book book){
         bookList.add(book);
-        new ReadWriteFile().writeFile(bookList);
+        readWriteFile.writeFile(bookList);
     }
 
     public static void deleteById(int index){
         bookList.remove(index);
-        new ReadWriteFile().writeFile(bookList);
+       readWriteFile.writeFile(bookList);
     }
 
     public BookController() {

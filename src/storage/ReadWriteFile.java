@@ -41,4 +41,18 @@ public class ReadWriteFile {
             throw new RuntimeException(e);
         }
     }
+
+    private ReadWriteFile() {
+    }
+    private static ReadWriteFile instance;
+
+    public static ReadWriteFile getInstance() {
+        if (instance==null)
+            synchronized (ReadWriteFile.class){
+                if(instance==null)
+                    instance=new ReadWriteFile();
+            }
+
+        return instance;
+    }
 }
